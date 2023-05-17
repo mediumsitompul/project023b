@@ -199,7 +199,7 @@ class PilihKursiView extends GetView<PilihKursiController> {
                         child: Row(
                           children: [
                             Container(
-                              //CONTAINER DECK /GERBONG
+                              //CONTAINER DECK / GERBONG
                               width: 70,
                               //height: 150,
                               //color: Colors.amber,
@@ -207,7 +207,7 @@ class PilihKursiView extends GetView<PilihKursiController> {
                                 child: Obx(
                                   () => Column(
                                       children: List.generate(
-                                    //6,
+                                    //4,
                                     controller.gerbong.length,
                                     (index) => GestureDetector(
                                       onTap: () =>
@@ -217,13 +217,12 @@ class PilihKursiView extends GetView<PilihKursiController> {
                                           decoration: BoxDecoration(
                                               border: Border.all(
                                                   color: Colors.black38),
-                                              //color: Colors.grey,
+                                              //color: Colors.grey, //DECS COLOR
                                               color: controller
                                                           .indexGerbong.value ==
                                                       index
                                                   ? Colors.green
                                                   : Colors.white,
-                                              //DECS COLOR
                                               borderRadius:
                                                   BorderRadius.circular(10)),
                                           width: 50,
@@ -253,11 +252,13 @@ class PilihKursiView extends GetView<PilihKursiController> {
                                       children: controller.gerbong[
                                               controller.indexGerbong.value]
                                           .map(
-                                            (e) => Container(
+                                            (e) => //null)
+
+                                                Container(
                                               width: 40,
                                               height: 40,
-                                              child:
-                                                  Center(child: Text(e["id"])),
+                                              // child: Center(
+                                              //     child: Text(e["status"])),
                                               decoration: BoxDecoration(
                                                 border: Border.all(
                                                     color: Colors.black38),
@@ -345,3 +346,4 @@ class ItemStatus extends StatelessWidget {
     );
   }
 }
+
