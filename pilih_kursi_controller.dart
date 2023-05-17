@@ -19,6 +19,11 @@ class PilihKursiController extends GetxController {
                   "id": "ID-${indexG + 1}-${indexK + 1}",
                   "status": "occupied",
                 };
+              } else {
+                return {
+                  "id": "ID-${indexG + 1}-${indexK + 1}",
+                  "status": "available",
+                };
               }
             } else if (indexG == 1) {
               if (indexK >= 14 && indexK <= 15 ||
@@ -27,12 +32,18 @@ class PilihKursiController extends GetxController {
                   "id": "ID-${indexG + 1}-${indexK + 1}",
                   "status": "occupied",
                 };
+              } else {
+                return {
+                  "id": "ID-${indexG + 1}-${indexK + 1}",
+                  "status": "available",
+                };
               }
+            } else {
+              return {
+                "id": "ID-${indexG + 1}-${indexK + 1}",
+                "status": "available",
+              };
             }
-
-            return {
-              "id": "ID-${indexG + 1}-${indexK + 1}",
-              "status": "available",
-            };
           })).obs;
 }
+
